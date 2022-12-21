@@ -1,0 +1,134 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "a0f44344-0c4c-4f02-95ca-78a21398a70f": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 290,
+                    "y": 170
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Resources": {
+            "DELOSI": {
+                "Type": "AWS::IAM::Role",
+                "Properties": {
+                    "RoleName":"CusManSSON1A",
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {
+                                    "AWS": "755486425624"
+                                },
+                                "Action": [
+                                    "sts:AssumeRole"
+                                ]
+                            }
+                        ]
+                    },
+                    "MaxSessionDuration": 14400,
+                    "ManagedPolicyArns" : [ "arn:aws:iam::aws:policy/AmazonRDSReadOnlyAccess", "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",  
+                                            "arn:aws:iam::aws:policy/AWSLambda_ReadOnlyAccess" , "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
+                                            "arn:aws:iam::aws:policy/AWSTrustedAdvisorPriorityReadOnlyAccess" , "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess",
+                                            "arn:aws:iam::aws:policy/AWSStorageGatewayReadOnlyAccess" ,  "arn:aws:iam::aws:policy/AmazonOpenSearchServiceReadOnlyAccess",
+                                            "arn:aws:iam::aws:policy/AmazonSNSReadOnlyAccess" , "arn:aws:iam::aws:policy/ElasticLoadBalancingReadOnly"],
+                    "Policies":[
+                            {
+                            "PolicyName": "CusManPol026",
+                            "PolicyDocument": {
+                                "Version": "2012-10-17",
+                                "Statement": [
+                                    {
+                                        "Sid": "ServicesForReadDelosi",
+                                        "Effect": "Allow",
+                                        "Action": [
+                                            "backup:List*",
+                                            "backup:Describe*",
+                                            "backup:Get*",
+                                            "detective:List*",
+                                            "detective:SearchGraph",
+                                            "detective:Get*",
+                                            "detective:Batch*",
+                                            "detective:DescribeOrganizationConfiguration",
+                                            "waf:Get*",
+                                            "waf:List*",
+                                            "waf-regional:Get*",
+                                            "waf-regional:List*",
+                                            "wafv2:Get*",
+                                            "wafv2:List*",
+                                            "wafv2:Describe*",
+                                            "wafv2:CheckCapacity",
+                                            "cognito-idp:ListResourcesForWebACL",
+                                            "cognito-idp:GetWebACLForResource",
+                                            "ses:Get*",
+                                            "ses:List*",
+                                            "acm:DescribeCertificate",
+                                            "acm:ListCertificates",
+                                            "acm:GetCertificate",
+                                            "acm:ListTagsForCertificate",
+                                            "acm:GetAccountConfiguration",
+                                            "guardduty:Describe*",
+                                            "guardduty:Get*",
+                                            "guardduty:List*",
+                                            "securityhub:Get*",
+                                            "securityhub:List*",
+                                            "securityhub:BatchGet*",
+                                            "securityhub:Describe*",
+                                            "cloudsearch:Describe*",
+                                            "cloudsearch:List*",
+                                            "kinesis:Get*",
+                                            "kinesis:List*",
+                                            "kinesis:Describe*",
+                                            "elasticache:Describe*",
+                                            "trustedadvisor:Describe*",
+                                            "iam:Get*",
+                                            "iam:List*",
+                                            "iam:Generate*",
+                                            "iam:Simulate*",
+                                            "cloudformation:Describe*",
+                                            "cloudformation:EstimateTemplateCost",
+                                            "cloudformation:Get*",
+                                            "cloudformation:List*",
+                                            "cloudformation:ValidateTemplate",
+                                            "cloudformation:Detect*",
+                                            "kms:Describe*",
+                                            "kms:List*",
+                                            "sqs:List*",
+                                            "sqs:Get*",
+                                            "sqs:ReceiveMessage",
+                                            "route53:List*",
+                                            "route53:Get*",
+                                            "route53:Test*",
+                                            "ssm:List*",
+                                            "ssm:Describe*",
+                                            "ssm:Get*",
+                                            "athena:Get*",
+                                            "athena:List*",
+                                            "athena:Batch*",
+                                            "directconnect:Describe*",
+                                            "directconnect:ListVirtualInterfaceTestHistory"
+                                        ],
+                                        "Resource": "*"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                },
+            "Metadata": {
+            "AWS::CloudFormation::Designer": {
+                "id": "3e99f5dd-e153-4954-a828-9769e0305e7b"
+                }
+            }
+        }
+    }
+}

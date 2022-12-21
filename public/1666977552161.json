@@ -1,0 +1,146 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Metadata": {
+        "AWS::CloudFormation::Designer": {
+            "a0f44344-0c4c-4f02-95ca-78a21398a70f": {
+                "size": {
+                    "width": 60,
+                    "height": 60
+                },
+                "position": {
+                    "x": 290,
+                    "y": 170
+                },
+                "z": 0,
+                "embeds": []
+            }
+        }
+    },
+    "Resources": {
+            "DELOSICOE": {
+                "Type": "AWS::IAM::Role",
+                "Properties": {
+                    "RoleName":"CusManSSON1A",
+                    "AssumeRolePolicyDocument": {
+                        "Version": "2012-10-17",
+                        "Statement": [
+                            {
+                                "Effect": "Allow",
+                                "Principal": {
+                                    "AWS": "755486425624"
+                                },
+                                "Action": [
+                                    "sts:AssumeRole"
+                                ]
+                            }
+                        ]
+                    },
+                    "MaxSessionDuration": 14400,
+                    "ManagedPolicyArns" : [ "arn:aws:iam::aws:policy/AmazonRDSReadOnlyAccess", "arn:aws:iam::aws:policy/CloudWatchReadOnlyAccess",  
+                                            "arn:aws:iam::aws:policy/AWSLambda_ReadOnlyAccess" , "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess",
+                                            "arn:aws:iam::aws:policy/AmazonRedshiftReadOnlyAccess" , "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess",
+                                            "arn:aws:iam::aws:policy/AmazonSNSReadOnlyAccess" , "arn:aws:iam::aws:policy/ElasticLoadBalancingReadOnly"],
+                    "Policies":[
+                            {
+                            "PolicyName": "CusManPol004",
+                            "PolicyDocument": {
+                                "Version": "2012-10-17",
+                                "Statement": [
+                                    {
+                                        "Sid": "ServicesForReadDelosi",
+                                        "Effect": "Allow",
+                                        "Action": [
+                                            "backup:List*",
+                                            "backup:Describe*",
+                                            "backup:Get*",
+                                            "waf:Get*",
+                                            "waf:List*",
+                                            "waf-regional:Get*",
+                                            "waf-regional:List*",
+                                            "wafv2:Get*",
+                                            "wafv2:List*",
+                                            "wafv2:Describe*",
+                                            "wafv2:CheckCapacity",
+                                            "cognito-idp:ListResourcesForWebACL",
+                                            "cognito-idp:GetWebACLForResource",
+                                            "ses:Get*",
+                                            "ses:List*",
+                                            "acm:DescribeCertificate",
+                                            "acm:ListCertificates",
+                                            "acm:GetCertificate",
+                                            "acm:ListTagsForCertificate",
+                                            "acm:GetAccountConfiguration",
+                                            "guardduty:Describe*",
+                                            "guardduty:Get*",
+                                            "guardduty:List*",
+                                            "cloudformation:Describe*",
+                                            "cloudformation:EstimateTemplateCost",
+                                            "cloudformation:Get*",
+                                            "cloudformation:List*",
+                                            "cloudformation:ValidateTemplate",
+                                            "cloudformation:Detect*",
+                                            "application-autoscaling:Describe*",
+                                            "kms:Describe*",
+                                            "kms:List*",
+                                            "glue:SearchTables",
+                                            "glue:Get*",
+                                            "glue:Batch*",
+                                            "glue:CheckSchemaVersionValidity",
+                                            "glue:List*",
+                                            "glue:QuerySchemaVersionMetadata",
+                                            "dms:Describe*",
+                                            "dms:ListTagsForResource",
+                                            "dms:TestConnection",
+                                            "elasticmapreduce:Get*",
+                                            "elasticmapreduce:List*",
+                                            "elasticmapreduce:Describe*",
+                                            "elasticmapreduce:ViewEventsFromAllClustersInConsole",
+                                            "sqs:List*",
+                                            "sqs:Get*",
+                                            "sqs:ReceiveMessage",
+                                            "secretsmanager:Get*",
+                                            "secretsmanager:DescribeSecret",
+                                            "secretsmanager:List*",
+                                            "sagemaker:Describe*",
+                                            "sagemaker:List*",
+                                            "sagemaker:Search",
+                                            "sagemaker:Get*",
+                                            "sagemaker:Batch*",
+                                            "sagemaker:RenderUiTemplate",
+                                            "sagemaker:Invoke*",
+                                            "sagemaker:QueryLineage",
+                                            "dynamodb:Describe*",
+                                            "dynamodb:List*",
+                                            "dynamodb:Get*",
+                                            "dynamodb:PartiQLSelect",
+                                            "dynamodb:BatchGetItem",
+                                            "dynamodb:ConditionCheckItem",
+                                            "dynamodb:Scan",
+                                            "dynamodb:Query",
+                                            "athena:Get*",
+                                            "athena:List*",
+                                            "athena:Batch*",
+                                            "cloudtrail:LookupEvents",
+                                            "cloudtrail:Get*",
+                                            "cloudtrail:List*",
+                                            "cloudtrail:Describe*",
+                                            "iam:Get*",
+                                            "iam:List*",
+                                            "iam:Generate*",
+                                            "iam:Simulate*"
+                                        ],
+                                        "Resource": "*"
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                },
+            "Metadata": {
+            "AWS::CloudFormation::Designer": {
+                "id": "3e99f5dd-e153-4954-a828-9769e0305e7b"
+                }
+            }
+        }
+    }
+}
