@@ -29,7 +29,7 @@ exports.auth = function(req, res , next) {
         }
     }
     req.user = payload;
-
+    
     next();
 }
 

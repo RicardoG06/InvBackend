@@ -1,0 +1,17 @@
+pipeline {
+    agent any
+    tools {
+        nodejs "node"
+    }
+
+    stages {
+        stage('build'){
+            steps {
+                git branch: 'develop', url: 'https://github.com/RicardoG06/InvBackend.git'
+                dir('back'){
+                    sh 'npm install'
+                }
+            }
+        }
+    }
+}
