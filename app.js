@@ -80,7 +80,7 @@ app.use('/api',carrito_route);
 app.use(cors())
 
 app.get('/', function(request, response){
-    response.send('Lograste subir el back en Nodejs :D')
+    response.send('Lograste subir el back en Nodejs x2 :D')
 })
 
 app.post('/api/documento',upload.single('myFile'), (req, res) => {
